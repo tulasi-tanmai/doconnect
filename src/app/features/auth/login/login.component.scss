@@ -1,0 +1,144 @@
+
+/* ===== Theme tokens (tweak freely) ===== */
+:root{
+  --panel-bg: #ffffff;
+  --text: #1d2127;
+  --muted: #6b7280;
+
+  --line: #e5e7eb;
+  --focus: #7c3aed;
+
+  --grad-start: #ff4db7; /* pink */
+  --grad-end:   #7c4dff; /* purple */
+
+  --hero-overlay: linear-gradient(0deg, rgba(0,0,0,.22), rgba(0,0,0,.22)),
+                  linear-gradient(120deg, rgba(255,77,183,.55), rgba(124,77,255,.55));
+}
+
+/* ===== Split layout ===== */
+.auth-split{
+  display:grid;
+  grid-template-columns: 1.2fr 1fr;  /* wider image like the reference */
+  min-height: 100vh;
+  background:#f5f7fb;
+}
+
+/* Left: image with pink→purple glass overlay */
+/* Container: left side of split */
+.auth-hero {
+  display: flex;                   /* enables centering */
+  justify-content: center;         /* center horizontally */
+  align-items: center;             /* center vertically */
+//   background: linear-gradient(135deg, #e08a8a, #fdfcfc); /* optional bg */
+  padding: 2rem;
+  height: 100%;
+}
+
+/* Logo inside hero */
+.auth-hero-logo {
+  max-width: 70%;                  /* don’t let it overflow */
+  height: auto;                    /* maintain aspect ratio */
+  object-fit: contain;             /* fit nicely inside container */
+  border-radius: 12px;             /* optional: rounded look */
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15); /* subtle depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.auth-hero-logo:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+}
+
+/* Responsive tweak: shrink logo on small screens */
+@media (max-width: 992px) {
+  .auth-hero {
+    height: 40vh;
+  }
+  .auth-hero-logo {
+    max-width: 50%;
+  }
+}
+
+
+/* Right: white panel */
+.auth-panel{
+  background:var(--panel-bg);
+  display:flex; align-items:center; justify-content:center;
+  box-shadow: -6px 0 24px rgba(0,0,0,.06);
+}
+.auth-panel-inner{
+  width:100%;
+  max-width: 420px;
+  padding: 48px 56px;
+}
+
+/* title */
+.auth-title{
+  font-weight:800;
+  letter-spacing:.2px;
+  margin-bottom:28px;
+  color:var(--text);
+}
+
+/* labels + help links */
+.form-label{ color:var(--muted); font-weight:600; }
+.link-sm{
+  color:var(--muted);
+  text-decoration:none;
+  transition: color .18s ease, opacity .18s ease;
+}
+.link-sm:hover{ color:var(--text); opacity:.9; }
+
+/* Underlined inputs like the reference */
+.form-underline{
+  border: none !important;
+  border-bottom: 1px solid var(--line) !important;
+  border-radius: 0 !important;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  background: transparent;
+  box-shadow: none !important;
+  transition: border-color .18s ease;
+}
+.form-underline:focus{
+  border-bottom-color: var(--focus) !important;
+  outline: none;
+}
+
+/* Checkbox color align */
+.form-check-input:checked{
+  background-color: var(--focus);
+  border-color: var(--focus);
+}
+
+/* Gradient pill button */
+.btn-gradient{
+  border:0;
+  border-radius: 999px;
+  padding: .8rem 1.1rem;
+  font-weight:700;
+  color:#09f540;
+//   background: linear-gradient(90deg, var(--grad-start), var(--grad-end) );
+  box-shadow: 0 10px 24px rgba(124,77,255,.25);
+  transition: transform .16s ease, filter .16s ease, box-shadow .16s ease;
+}
+.btn-gradient:hover{
+  transform: translateY(-1px);
+  filter: brightness(1.03);
+  box-shadow: 0 14px 28px rgba(124,77,255,.32);
+}
+.btn-gradient:disabled{
+  opacity:.6; cursor:not-allowed; transform:none; box-shadow:none;
+}
+
+/* Spacing alignment like mock */
+.mb-3{ margin-bottom: 1rem !important; }
+.mb-4{ margin-bottom: 1.25rem !important; }
+
+/* ===== Responsive ===== */
+@media (max-width: 992px){
+  .auth-split{ grid-template-columns: 1fr; }
+  
+  .auth-panel-inner{ padding: 40px 28px; max-width: 520px; }
+}

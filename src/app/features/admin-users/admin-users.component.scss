@@ -1,0 +1,107 @@
+/* ===== Admin • Users ===== */
+.page.admin-users-page {
+  max-width: 1060px;
+  margin: 24px auto 56px;
+  padding: 0 16px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: .2px;
+  margin-bottom: 12px;
+}
+
+/* Back button spacing */
+.btn-outline-primary.mb-3 { margin-top: 6px; }
+
+/* Flash messages */
+.messages { margin: 8px 0 16px; }
+.messages .ok {
+  background: #e8f7ee; color: #196b36;
+  border: 1px solid #bfe7cc; border-radius: 10px; padding: 10px 12px;
+}
+.messages .err {
+  background: #fdecea; color: #8a1c1c;
+  border: 1px solid #f5c2c7; border-radius: 10px; padding: 10px 12px;
+}
+
+/* Card */
+.card {
+  background: #fff;
+  border: 1px solid #e7eaf0;
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(16,24,40,.04);
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+/* Search toolbar */
+.toolbar .search {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d0d5dd;
+  border-radius: 10px;
+  outline: none;
+}
+.toolbar .search:focus { border-color: #5b9cff; box-shadow: 0 0 0 3px rgba(59,130,246,.15); }
+.toolbar .hint {
+  font-size: 12px; color: #6b7280; margin-top: 6px;
+}
+
+/* Add user form */
+.add h3, .users h3 { font-size: 20px; margin: 4px 0 14px; }
+.grid-form {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+.grid-form label { display: flex; flex-direction: column; gap: 6px; font-weight: 500; }
+.grid-form input, .grid-form select {
+  height: 38px; padding: 8px 10px;
+  border: 1px solid #d0d5dd; border-radius: 10px; outline: none;
+}
+.grid-form input:focus, .grid-form select:focus { border-color: #5b9cff; box-shadow: 0 0 0 3px rgba(59,130,246,.15); }
+.grid-form .actions { grid-column: 1 / -1; display: flex; gap: 10px; margin-top: 4px; }
+.err { color: #b42318; font-size: 12px; }
+
+/* Users table */
+.table-wrap { overflow: auto; border-radius: 12px; }
+.tbl { width: 100%; border-collapse: collapse; }
+.tbl th, .tbl td { padding: 10px 12px; border-bottom: 1px solid #eef2f7; }
+.tbl thead th {
+  font-size: 13px; text-transform: uppercase; letter-spacing: .3px;
+  color: #6b7280; background: #fafbfc; position: sticky; top: 0; z-index: 1;
+}
+.tbl tbody tr:hover { background: #f8fafc; }
+.tbl td.strong { font-weight: 600; color: #111827; }
+.tbl td.muted { color: #6b7280; }
+.tbl td.right { text-align: right; }
+
+/* Role badge */
+.badge {
+  display: inline-block;
+  padding: 4px 10px; border-radius: 999px;
+  font-size: 12px; font-weight: 600; background: #eef2ff; color: #3443b8;
+}
+.badge-admin { background: #fff7ed; color: #9a3412; }
+
+/* Buttons */
+.btn { padding: 6px 12px; border-radius: 8px; border: 1px solid #d0d5dd; background: #fff; }
+.btn:hover { background: #f8fafc; }
+.btn-primary { background: #2563eb; color: #fff; border-color: #2563eb; }
+.btn-primary:hover { filter: brightness(.95); }
+.btn-warn { color: #b42318; border-color: #f1aeb5; }
+.btn-warn:hover { background: #fff1f3; }
+
+/* Loading */
+.loading { color: #6b7280; font-style: italic; padding: 4px 0 8px; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .grid-form { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px) {
+  .grid-form { grid-template-columns: 1fr; }
+  .tbl th:nth-child(4), .tbl td:nth-child(4) { display: none; } /* hide Created on small screens */
+}

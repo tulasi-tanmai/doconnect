@@ -1,0 +1,68 @@
+/* Layout */
+:host { display: block; }
+.sheet { max-width: 1000px; margin-inline: auto; border-radius: 16px; }
+
+/* Header */
+.card-header .btn-link {
+  color: #0d6efd;
+  text-decoration: none;
+}
+.card-header .btn-link:hover { text-decoration: underline; }
+.card-header .h5 { font-weight: 600; }
+
+/* Editor */
+.form-label { font-weight: 600; color: #334155; }
+textarea.form-control {
+  min-height: 260px;         /* bigger box */
+  resize: horizontal;
+  line-height: 1.5px; 
+     /* better line spacing */
+}
+textarea.form-control::placeholder { color: #94a3b8; }
+textarea.form-control:focus {
+  box-shadow: 0 0 0 .25rem rgba(13,110,253,.15);
+}
+
+/* Actions */
+button.btn[disabled] { pointer-events: none; opacity: .6; }
+.bi-robot { margin-right: .35rem; }
+
+/* Answer area */
+.mt-3 .text-uppercase { letter-spacing: .06em; }
+.bg-light.border.rounded-3.p-3 { background-color: #f8fafc !important; }
+pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: .95rem;
+}
+.scroll-fab {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  z-index: 2;
+  box-shadow: 0 4px 12px rgba(0,0,0,.15);
+}
+
+/* Spinner size in loading block */
+.spinner-border.spinner-border-sm {
+  width: 1.25rem; height: 1.25rem; border-width: .15em;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .sheet { border-radius: 12px; }
+  textarea.form-control { min-height: 180px; }
+}
+
+/* Optional dark mode polish */
+@media (prefers-color-scheme: dark) {
+  .card { background-color: #0b1220; border-color: #1f2a44; }
+  .card-header { background-color: #0b1220; border-color: transparent; }
+  .form-label { color: #cbd5e1; }
+  .bg-light.border.rounded-3.p-3 {
+    background-color: #111827 !important;
+    border-color: #374151 !important;
+  }
+}
