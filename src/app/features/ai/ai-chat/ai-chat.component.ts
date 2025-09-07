@@ -1,14 +1,4 @@
-// import { Component } from '@angular/core';
 
-// @Component({
-//   selector: 'app-ai-chat',
-//   imports: [],
-//   templateUrl: './ai-chat.component.html',
-//   styleUrl: './ai-chat.component.scss'
-// })
-// export class AiChatComponent {
-
-// }
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';

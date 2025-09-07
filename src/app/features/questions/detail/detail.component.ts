@@ -20,13 +20,7 @@ import { environment } from '../../../../environments/environment';
     MatFormFieldModule, MatInputModule, MatButtonModule, MatSnackBarModule
   ],
   templateUrl: './detail.component.html',
-  // styles: [`
-  //   .full{width:100%}
-  //   .answer{padding:8px 0;border-bottom:1px solid #cd1919ff}
-  //   .imgs{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
-  //   .imgs img{max-wid
-  //th:160px;max-height:120px;object-fit:cover;border-radius:6px;border:1px solid #e5e5e5}
-  // `]
+
   styleUrls: ['./detail.component.scss']
 
 })
@@ -69,9 +63,9 @@ export class DetailComponent implements OnInit {
   this.questionImages = (this.q?.images || []).filter(p => !answerImgs.has(p));
 });
    
-    //i added one
+    
  }
-  //i added one
+  
 
 
   // Convert '/uploads/xxx' -> 'http://localhost:5108/uploads/xxx'

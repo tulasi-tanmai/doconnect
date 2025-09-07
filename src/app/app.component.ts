@@ -6,8 +6,7 @@ import { NgIf } from '@angular/common';
 import { AuthService } from './core/auth.service';
 import { Router } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
-// import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-// import { AiChatComponent } from './features/ai/ai-chat/ai-chat.component'; // standalone
+
 
 
 @Component({
@@ -20,9 +19,6 @@ import { MatIconModule } from '@angular/material/icon';
 
 export class AppComponent {
   constructor(public auth: AuthService, private router: Router) {}
-  //adding ai chat popup
-  // openAiDialog() {
-  //   this.dialog.open(AiChatComponent, { autoFocus: true, width: '720px' });
-  // }
+ 
   logout() { this.auth.logout(); this.router.navigate(['/auth/login']); }
 }
